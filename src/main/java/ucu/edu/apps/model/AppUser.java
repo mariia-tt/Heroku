@@ -23,12 +23,38 @@ public class AppUser {
 
     @Column(unique = true)
     private String email;
+    
     private LocalDate dob;
 
     @Transient // буде його скіпати
+
     private Integer age;
 
     public int getAge() {
         return Period.between(dob, LocalDate.now()).getYears();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String newEmail) {
+        this.email = newEmail;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate newDob) {
+        this.dob = newDob;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer newId) {
+        this.id = newId;
     }
 }
