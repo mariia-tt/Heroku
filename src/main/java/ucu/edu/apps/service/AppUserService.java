@@ -23,7 +23,8 @@ public class AppUserService {
     }
 
     public AppUser createAppUser(AppUser appUser) {
-        Optional<AppUser> userByEmail = Optional.ofNullable(appUserRepository.findUserByEmail(appUser.getEmail()));
+        Optional<AppUser> userByEmail = Optional.ofNullable(
+            appUserRepository.findUserByEmail(appUser.getEmail()));
         if (userByEmail.isPresent()) {
             throw new IllegalStateException("Email already taken");
         }

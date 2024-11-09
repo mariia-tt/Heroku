@@ -35,18 +35,8 @@ public class AppUserController {
         return appUserService.createAppUser(appUser);
     }
 
-    // @GetMapping("/user/email")
-    // public ResponseEntity<AppUser> getUserByEmail(@RequestParam String email) {
-    //     AppUser userByEmail = appUserService.getUserByEmail(email);
-    //     if (userByEmail != null) {
-    //         return ResponseEntity.ok(userByEmail);
-    //     }
-    //     return ResponseEntity.notFound().build();
-    // }
-    //чого закоменчинний код не працює (написаний на парі)
-    
     @GetMapping("/user/email")
     public ResponseEntity<String> getUserByEmail(@RequestParam String email) {
         return ResponseEntity.ok("Received email: " + email);
-    } //
+    }
 }
